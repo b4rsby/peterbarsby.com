@@ -60,6 +60,7 @@
 
 				var i = weightedRand({0:0.4, 1:0.4, 2:0.2})
 				var n = weightedRand({0:0.4, 1:0.4, 2:0.2})
+				
 				var geometry = new THREE.SphereBufferGeometry( 60, Math.random() * i, Math.random() * n );
 				var texture = new THREE.CanvasTexture( createImage() );
 				var material = new THREE.MeshBasicMaterial( { map: texture, wireframe: true } );
