@@ -58,20 +58,7 @@
 			var renderCount = 0;
 			function render() {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-				var i = weightedRand({3:0, 40:0.4, 100:0.2})
-				var n = weightedRand({3:0.4, 40:0.4, 2:0.2})
-
-=======
-				var i = weightedRand({0:0.4, 1:0.4, 2:0.2})
-				var n = weightedRand({0:0.4, 1:0.4, 2:0.2})
->>>>>>> parent of 77ba92e... Formatting
-=======
-				var i = weightedRand({0:0.4, 1:0.4, 2:0.2})
-				var n = weightedRand({0:0.4, 1:0.4, 2:0.2})
-				
->>>>>>> parent of 70a16d8... Sizes symmtery.
+				var i,n = Math.floor((Math.random()*100) + 1);
 				var geometry = new THREE.SphereBufferGeometry( 60, Math.random() * i, Math.random() * n );
 				var texture = new THREE.CanvasTexture( createImage() );
 				var material = new THREE.MeshBasicMaterial( { map: texture, wireframe: true } );
@@ -86,16 +73,16 @@
 
 			}
 
-			window.addEventListener( 'resize', onWindowResize, false );
+		window.addEventListener( 'resize', onWindowResize, false );
 
-			function onWindowResize(){
+		function onWindowResize(){
 
-			    camera.aspect = window.innerWidth / window.innerHeight;
-			    camera.updateProjectionMatrix();
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
 
-			    renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setSize( window.innerWidth, window.innerHeight );
 
-			}
+		}
 
 
 		</script>
