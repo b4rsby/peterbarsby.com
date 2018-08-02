@@ -58,7 +58,8 @@
 			var renderCount = 0;
 			function render() {
 
-				var i,n = Math.floor(Math.random() * 100) + 1;
+				var i = weightedRand({3:0, 40:0.4, 100:0.2})
+				var n = weightedRand({3:0.4, 40:0.4, 2:0.2})
 
 				var geometry = new THREE.SphereBufferGeometry( 60, Math.random() * i, Math.random() * n );
 				var texture = new THREE.CanvasTexture( createImage() );
@@ -74,17 +75,15 @@
 
 			}
 
-			function weightedRand(spec) {
-			
-				var i, j, table=[];
-					for (i in spec) {
-					for (j=0; j<spec[i]*10; j++) {
-					  table.push(i);
-					}
-				}
-				return function() {
-					return table[Math.floor(Math.random() * table.length)];
-				}
+			window.addEventListener( 'resize', onWindowResize, false );
+
+			function onWindowResize(){
+
+			    camera.aspect = window.innerWidth / window.innerHeight;
+			    camera.updateProjectionMatrix();
+
+			    renderer.setSize( window.innerWidth, window.innerHeight );
+
 			}
 
 
